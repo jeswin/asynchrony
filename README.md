@@ -52,6 +52,7 @@ var httpGet = asynchrony(function(url) {
     });
 });
 
+//See ma, no then()s!
 var tweets = getTweetsFor("jeswin");
 var shortUrls = parseTweetsForUrls(tweets);
 var mostRecentShortUrl = asynchrony(function(shortUrls) {
