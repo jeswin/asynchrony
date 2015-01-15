@@ -13,6 +13,8 @@ npm install asynchrony
 
 Code with asynchrony. See how functions are wrapped in asynchrony.
 ```
+var asynchrony = require('asynchrony');
+
 //Get tweets for a handle
 var getTweetsFor = asynchrony(function(name) {
     return new Promise(function(resolve, reject) {
