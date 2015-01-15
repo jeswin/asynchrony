@@ -5,6 +5,10 @@ This project is not a joke. Really.
 
 Examples below to see how you can use asynchrony.
 
+### Installation
+
+npm install asynchrony
+
 ### Comparison with Promises Code
 
 Code with asynchrony. See how functions are wrapped in asynchrony.
@@ -52,7 +56,7 @@ var httpGet = asynchrony(function(url) {
     });
 });
 
-//See ma, no then()s!
+//Look ma, not many then()s!
 var tweets = getTweetsFor("jeswin");
 var shortUrls = parseTweetsForUrls(tweets);
 var mostRecentShortUrl = asynchrony(function(shortUrls) {
