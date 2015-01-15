@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Jeswin Kumar",
+    "email": "jeswinpk@agilehead.com"
+  },
+  "name": "asynchrony",
+  "version": "0.1.0",
+  "description": "Auto unwrap promise parameters for clean asynchronous code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeswin/asynchrony.git"
+  },
+  "main": "lib/asynchrony",
+  "devDependencies": {
+    "istanbul-harmony": "0",
+    "mocha": "^2.0.0"
+  },
+  "keywords": [
+    "async", "promises"
+  ],
+  "license": "GPL-3.0+"
+}
