@@ -7,30 +7,6 @@ Examples below to see how you can use asynchrony.
 
 ### Comparison with Promises Code
 
-Code without asynchrony.
-```
-/*
-    Example taken from https://blog.domenic.me/youre-missing-the-point-of-promises/
-    Implementation of getTweetsFor(), parseTweetsForUrls() etc removed for brevity
-*/
-
-getTweetsFor("domenic")
-    .then(function (tweets) {
-        var shortUrls = parseTweetsForUrls(tweets);
-        var mostRecentShortUrl = shortUrls[0];
-        return expandUrlUsingTwitterApi(mostRecentShortUrl); // promise-returning function
-    })
-    .then(httpGet) // promise-returning function
-    .then(
-        function (responseBody) {
-            console.log("Most recent link text:", responseBody);
-        },
-        function (error) {
-            console.error("Error with the twitterverse:", error);
-        }
-    );
-```
-
 Code with asynchrony. See how functions are wrapped in asynchrony.
 ```
 //Get tweets for a handle
@@ -87,4 +63,28 @@ var responseBody = httpGet(mostRecentShortUrl);
 responseBody.then(function(resp) {
     console.log(resp);
 });
+```
+
+Code without asynchrony.
+```
+/*
+    Example taken from https://blog.domenic.me/youre-missing-the-point-of-promises/
+    Implementation of getTweetsFor(), parseTweetsForUrls() etc removed for brevity
+*/
+
+getTweetsFor("domenic")
+    .then(function (tweets) {
+        var shortUrls = parseTweetsForUrls(tweets);
+        var mostRecentShortUrl = shortUrls[0];
+        return expandUrlUsingTwitterApi(mostRecentShortUrl); // promise-returning function
+    })
+    .then(httpGet) // promise-returning function
+    .then(
+        function (responseBody) {
+            console.log("Most recent link text:", responseBody);
+        },
+        function (error) {
+            console.error("Error with the twitterverse:", error);
+        }
+    );
 ```
